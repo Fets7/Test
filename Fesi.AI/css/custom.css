@@ -1,0 +1,237 @@
+/********** common setting **********/
+body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    font-family: 'sans-serif', sans-serif !important;
+}
+.txtgrdnt {
+    background: -webkit-linear-gradient(#2900f5, #2900f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2.8rem !important;
+    font-weight: 700;
+}
+h3{  
+    color: #ffffff !important;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+video {
+    max-width: 80%;
+    float: left;
+    /* box-shadow: 0 0px 100px rgba(8, 5, 187, 0.2); */
+
+}
+.logo {
+    height: 38%;
+    width: 38%;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+.jumbotron {
+    margin-bottom: 0 !important;
+}
+
+.atlas-cta {
+    border-radius: 22px !important;
+    padding: 12px 30px !important;
+    font-weight: 700;
+    transition: .3s ease-in-out !important;
+}
+
+.atlas-cta:hover {
+    text-decoration: none;
+    transform: translateY(-5px);
+}
+
+.atlas-cta-wide {
+    width: 100%;
+}
+
+.cta-green {
+    background: #ffffff;
+    color: #192440;
+}
+
+.cta-green:hover {
+    color: #ffffff;
+    background: #2900f5;
+
+}
+
+.cta-blue {
+
+    background: #7c7c7c;
+    color: #ffffff;
+}
+
+.cta-blue:hover {
+    /* color: #ffffff;
+    background: #121a2e; */
+    color: #ffffff;
+    background: #2900f5;
+
+}
+
+.cta-ghost {
+    border: 2px solid #192440 !important;
+    color: #192440;
+}
+
+.cta-ghost:hover {
+    color: #ffffff;
+    background: #121a2e;
+}
+
+#banner {
+    background-size: cover;
+}
+/********** feature (skew background) **********/
+.feature img {
+    margin-left: 0!important;
+}
+
+#feature-first {
+    background: #ffffff;
+}
+#feature-first1 {
+    background: #ffffff;
+
+}
+#feature-last {
+    background: #ffffff;
+
+}
+#feature-last1 {
+    background: #ffffff;
+}
+
+#onzeMissie {
+    background: #ffffff;
+}
+/********** price table **********/
+#price-table {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+#price-table__premium {
+    background: #192440;
+    color: #ffffff;
+}
+
+#price-table ul li {
+    padding: 5px 0;
+}
+
+/********** contact **********/
+#contact {
+    background-size: cover;
+    background-color: #7c7c7c; 
+    border-top-right-radius: 10em;
+    box-shadow: 10px 10px 10px #333;
+}
+
+#contact ul li {
+    padding: 3px 0;
+}
+
+#contact form {
+    color: #ffffff;
+}
+
+#contact form input,
+#contact form textarea {
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+/********** copyright **********/
+#copyright {
+    background: transparent;
+    padding: 2rem 3rem;
+}
+
+#copyright #social-media a {
+    width: 40px;
+    height: 40px;
+    border-radius: 99%;
+    background: #ffffff;
+    transition: .4s ease;
+}
+
+#copyright #social-media a i {
+    color: #192440;
+    font-size: 1.2rem;
+    line-height: 40px;
+}
+
+#copyright #social-media a:hover {
+    background: #4840bb;
+}
+
+#copyright #social-media a:hover i {
+    color: #ffffff;
+}
+/* Over ons */
+.overons {
+    text-align: center;
+}
+.lnk {
+    color: white;
+}
+/********** RWD **********/
+@media (max-width: 1000px) {
+    #banner h1 {
+        font-size: 3.6rem;
+    }
+    #banner {
+        background-position: 25%;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+    .logo {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        /* margin-left: auto; */
+        margin-right: auto;
+    }
+    .feature img {
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+    html, video {
+        float: none;
+    }
+}
+@media (max-width: 767px) {
+    video.mx-auto.d-block {
+        display: none !important;
+    }
+    .logo {
+        height: auto;
+        width: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width: 767px) {
+    img.mx-auto.d-block1 {
+        display: none !important;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+
