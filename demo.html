@@ -116,6 +116,14 @@
   </style>
 </head>
 <body>
+  <script>
+  const wachtwoord = "fesi2025";
+  const invoer = prompt("Voer wachtwoord in om de demo te bekijken:");
+  if (invoer !== wachtwoord) {
+    document.body.innerHTML = "<h1 style='text-align:center;margin-top:20%'>❌ Geen toegang</h1>";
+    throw new Error("Access denied");
+  }
+</script>
   <main>
     <div>
       <h1>Fesi-AI Chat Widget Demo</h1>
