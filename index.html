@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fesi-AI Chat Widget Demo</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #3b82f6;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+      z-index: 9998;
+    }
+    .chat-button:hover { transform: scale(1.05); }
+    .chat-button img { width: 30px; height: 30px; }
+
+    .chat-frame {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 380px;
+      height: 520px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fesi-AI Chat Widget Demo</h1>
+  <p>Open deze pagina lokaal om de popup te testen.</p>
+
+  <iframe
+    id="chatFrame"
+    class="chat-frame"
+    src="https://fesi-chat.vercel.app"
+    title="Fesi-AI Chat"
+  ></iframe>
+
+  <button id="chatToggle" class="chat-button">
+    <img src="https://www.fesi-ai.com/img/LogoWithoutText.png" alt="Chat" />
+  </button>
+
+  <script>
+    const btn = document.getElementById("chatToggle");
+    const frame = document.getElementById("chatFrame");
+    let open = false;
+    btn.addEventListener("click", () => {
+      open = !open;
+      frame.style.display = open ? "block" : "none";
+    });
+  </script>
+</body>
+</html>
