@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fesi-AI Chat Widget Demo</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    p {
+      font-size: 0.95rem;
+      color: #475569;
+      text-align: center;
+      max-width: 320px;
+      line-height: 1.4;
+    }
+
+    /* Chat trigger button */
+    .chat-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #3b82f6; /* blauw in lijn met je widget */
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+      z-index: 9998;
+    }
+    .chat-button:hover {
+      transform: scale(1.05);
+    }
+    .chat-button img {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Chat frame popup */
+    .chat-frame {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 380px;
+      height: 520px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    /* Header overlay boven iframe als je wilt branden (optioneel) */
+    .chat-wrapper {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 380px;
+      height: 520px;
+      display: none;
+      flex-direction: column;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+      overflow: hidden;
+      background: white;
+      z-index: 9999;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .chat-header {
+      background: #3b82f6;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chat-header img {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+    }
+    .chat-body {
+      flex: 1;
+      border: none;
+      padding: 0;
+    }
+    .chat-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>
+      <h1>Fesi-AI Chat Widget Demo</h1>
+      <p>Dit is een demo van de AI chat widget rechtsonder. Klik op de blauwe knop met het logo om hem te openen.</p>
+    </div>
+  </main>
+
+  <!-- Popup venster met headerbranding + iframe erin -->
+  <div id="chatWrapper" class="chat-wrapper">
+    <div class="chat-header">
+      <img src="https://www.fesi-ai.com/img/LogoWithoutText.png" alt="Fesi-AI" />
+      <span>Fesi-AI Assistent</span>
+      <span style="margin-left:auto; font-size:0.8rem; opacity:0.9;">online</span>
+    </div>
+    <div class="chat-body">
+      <iframe
+        id="chatFrame"
+        src="https://meubel-demo-agent.vercel.app"
+        title="Fesi-AI Chat"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- De ronde knop -->
+  <button id="chatToggle" class="chat-button" aria-label="Open chat">
+    <img src="https://www.fesi-ai.com/img/LogoWithoutText.png" alt="Chat" />
+  </button>
+
+  <script>
+    const btn = document.getElementById("chatToggle");
+    const wrapper = document.getElementById("chatWrapper");
+
+    let open = false;
+    btn.addEventListener("click", () => {
+      open = !open;
+      wrapper.style.display = open ? "flex" : "none";
+    });
+  </script>
+</body>
+</html>
